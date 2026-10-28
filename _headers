@@ -1,5 +1,3 @@
-# Security headers — Netlify / Cloudflare Pages format.
-# (On other hosts, set the equivalent response headers; see DEPLOY-SITE.md.)
 /*
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests
   X-Content-Type-Options: nosniff
@@ -8,4 +6,3 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
   X-Frame-Options: DENY
   Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Resource-Policy: same-origin
