@@ -1,3 +1,4 @@
 Contact: mailto:[SECURITY-EMAIL]
-Preferred-Languages: en, fr, nl
-Expires: 2027-12-31T23:59:59Z
+Preferred-Languages: en, fr
+Canonical: https://voltra.app/.well-known/security.txt
+Expires: 2027-10-29T00:00:00.000Z

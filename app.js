@@ -1,65 +1,69 @@
-/* Voltra site — OS-aware downloads, header state, subtle 3D tilt, scroll reveals.
-   No external deps, no inline code (strict CSP). */
+/* Voltra site — OS detection + small helpers. No inline script (strict CSP). */
 (function () {
   "use strict";
-  var OWNER = "mqasimhere", REPO = "voltra-downloads", VERSION = "1.0.0";
-  var BASE = "https://github.com/" + OWNER + "/" + REPO + "/releases/latest/download";
-  var PRIMARY = {
-    windows:   { file: "voltra-windows-setup.exe",      label: "Download for Windows" },
-    "mac-arm": { file: "voltra-mac-apple-silicon.dmg",  label: "Download for macOS" },
-    "mac-intel":{ file: "voltra-mac-intel.dmg",         label: "Download for macOS" },
-    linux:     { file: "voltra-linux.AppImage",         label: "Download for Linux" }
-  };
-  var url = function (f) { return BASE + "/" + f; };
-  function byId(id) { return document.getElementById(id); }
+  var REPO = "https://github.com/mqasimhere/voltra-downloads";
+  var RELEASE = REPO + "/releases/latest";
 
-  // static links
-  if (byId("sums-link")) byId("sums-link").setAttribute("href", url("SHA256SUMS.txt"));
-  if (byId("gh-link")) byId("gh-link").setAttribute("href", "https://github.com/" + OWNER + "/" + REPO + "/releases");
-  if (byId("ver")) byId("ver").textContent = VERSION;
-  if (byId("year")) byId("year").textContent = String(new Date().getFullYear());
+  // Year
+  var y = document.getElementById("year");
+  if (y) { y.textContent = String(new Date().getFullYear()); }
 
-  // OS detection
-  function baseGuess() {
-    var p = (navigator.platform || "") + " " + (navigator.userAgent || "");
-    if (/Win/i.test(p)) return "windows";
-    if (/Mac|iPhone|iPad|iPod/i.test(p)) return "mac-arm";
-    if (/Linux|X11|Ubuntu|Debian|Android/i.test(p)) return "linux";
+  // External links that shouldn't be hard-coded in markup
+  var sums = document.getElementById("sums-link");
+  if (sums) { sums.href = RELEASE + "/download/SHA256SUMS.txt"; }
+  var gh = document.getElementById("gh-link");
+  if (gh) { gh.href = RELEASE; }
+
+  // Detect OS to highlight the most likely download
+  function detect() {
+    var ua = (navigator.userAgent || "") + " " + (navigator.platform || "");
+    var p = ua.toLowerCase();
+    var isMac = /mac|iphone|ipad|ipod/.test(p);
+    if (/windows|win32|win64/.test(p)) { return "windows"; }
+    if (isMac) {
+      // Apple Silicon vs Intel — best-effort
+      var arm = false;
+      try {
+        var c = document.createElement("canvas");
+        var gl = c.getContext("webgl") || c.getContext("experimental-webgl");
+        if (gl) {
+          var dbg = gl.getExtension("WEBGL_debug_renderer_info");
+          var r = dbg ? String(gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL)) : "";
+          if (/apple/i.test(r) && !/intel/i.test(r)) { arm = true; }
+        }
+      } catch (e) {}
+      return arm ? "mac-arm" : "mac-intel";
+    }
+    if (/android|linux|x11|cros/.test(p)) { return "linux"; }
     return null;
   }
-  var rows = Array.prototype.slice.call(document.querySelectorAll(".dl-row[data-os]"));
-  function apply(os) {
-    if (!os) return;
-    rows.forEach(function (a) { a.classList.toggle("is-you", a.getAttribute("data-os") === os); });
-    var btn = byId("hero-download"), label = byId("hero-download-label"), p = PRIMARY[os];
-    if (btn && p) { btn.setAttribute("href", url(p.file)); btn.setAttribute("rel", "noopener"); if (label) label.textContent = p.label; }
+
+  var os = detect();
+  var labels = {
+    "windows": "Download for Windows",
+    "mac-arm": "Download for macOS",
+    "mac-intel": "Download for macOS",
+    "linux": "Download for Linux"
+  };
+
+  // Mark the matching row(s) and lift a primary one to the top of its OS
+  var rows = document.querySelectorAll("#dl-list .dl-row");
+  var primary = null;
+  for (var i = 0; i < rows.length; i++) {
+    var ro = rows[i];
+    if (os && ro.getAttribute("data-os") === os) {
+      ro.classList.add("is-you");
+      if (!primary) { primary = ro; }
+    }
   }
-  var guess = baseGuess();
-  apply(guess);
-  if (guess && guess.indexOf("mac") === 0 && navigator.userAgentData && navigator.userAgentData.getHighEntropyValues) {
-    navigator.userAgentData.getHighEntropyValues(["architecture"]).then(function (ua) {
-      if (ua && ua.architecture && /x86|x64|amd/i.test(ua.architecture)) apply("mac-intel");
-    }).catch(function () {});
-  }
+  // (The "your system" badge is rendered by CSS via .dl-row.is-you .dl-os::after)
 
-  // header background on scroll
-  var head = byId("head");
-  function onScroll() { if (head) head.classList.toggle("scrolled", window.scrollY > 12); }
-  onScroll();
-  window.addEventListener("scroll", onScroll, { passive: true });
-
-  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // subtle 3D tilt of the hero screenshot following the pointer
-  var tilt = byId("tilt");
-  if (tilt && !reduce && window.matchMedia("(pointer:fine)").matches) {
-    var hero = tilt.closest(".shot3d");
-    hero.addEventListener("pointermove", function (e) {
-      var r = hero.getBoundingClientRect();
-      var dx = (e.clientX - r.left) / r.width - 0.5;
-      var dy = (e.clientY - r.top) / r.height - 0.5;
-      tilt.style.transform = "rotateY(" + (-11 + dx * 10).toFixed(2) + "deg) rotateX(" + (5 - dy * 8).toFixed(2) + "deg)";
-    });
-    hero.addEventListener("pointerleave", function () { tilt.style.transform = ""; });
+  // Point the hero button straight at the detected build; else to the list
+  var hero = document.getElementById("hero-download");
+  var heroLabel = document.getElementById("hero-download-label");
+  if (hero && primary) {
+    hero.setAttribute("href", primary.getAttribute("href"));
+    hero.setAttribute("rel", "noopener");
+    if (heroLabel && os && labels[os]) { heroLabel.textContent = labels[os]; }
   }
 })();

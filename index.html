@@ -12,17 +12,18 @@
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'; upgrade-insecure-requests">
 <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png">
 <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
-<meta name="theme-color" content="#06090f">
+<meta name="theme-color" content="#ffffff">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Voltra">
 <meta property="og:title" content="Voltra — electrical single-line diagrams, done properly">
-<meta property="og:description" content="Draw single-line diagrams, floor plans and material lists. Offline. Windows, macOS, Linux. Free to download.">
+<meta property="og:description" content="Draw single-line diagrams, floor plans and material lists. Offline. Windows, macOS, Linux. Free.">
 <meta property="og:url" content="https://voltra.app/">
 <meta property="og:image" content="https://voltra.app/assets/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Voltra — electrical single-line diagrams">
 <meta name="twitter:description" content="Draw single-line diagrams, floor plans and material lists. Offline. Windows, macOS, Linux.">
 <meta name="twitter:image" content="https://voltra.app/assets/og-image.png">
+<link rel="preload" href="./assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="./styles.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"SoftwareApplication","name":"Voltra","applicationCategory":"DesignApplication","operatingSystem":"Windows, macOS, Linux","description":"Desktop app for electrical single-line diagrams, floor plans and material lists.","offers":[{"@type":"Offer","price":"0","priceCurrency":"EUR","name":"Free"},{"@type":"Offer","price":"19","priceCurrency":"EUR","name":"Pro (monthly)"}],"url":"https://voltra.app/","softwareVersion":"1.0.0"}
@@ -33,7 +34,7 @@
 
 <header class="site-head" id="head">
   <div class="wrap head-row">
-    <a class="brand" href="#top"><img src="./assets/mark-96.png" alt="" width="26" height="26"><span>Voltra</span></a>
+    <a class="brand" href="#top"><img src="./assets/mark-96.png" alt="" width="24" height="24"><span>Voltra</span></a>
     <nav class="nav" aria-label="Primary">
       <a href="#features">Features</a>
       <a href="#how">How it works</a>
@@ -41,26 +42,20 @@
       <a href="#faq">FAQ</a>
     </nav>
     <div class="head-actions">
-      <div class="lang" aria-label="Language">
-        <a href="./" class="on" aria-current="page">EN</a>
-        <a href="./fr/">FR</a>
-      </div>
+      <div class="lang" aria-label="Language"><a href="./" class="on" aria-current="page">EN</a><a href="./fr/">FR</a></div>
       <a class="btn btn-primary" href="#download">Download</a>
     </div>
   </div>
 </header>
 
 <main id="top">
-
-  <!-- HERO -->
   <section class="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <span class="eyebrow"><span class="dot"></span>Desktop app · Windows · macOS · Linux</span>
-        <h1>Electrical plans that pass inspection, <span class="grad">drawn in minutes</span>.</h1>
+        <h1>Electrical plans that <span class="grad">pass inspection</span>, drawn in minutes.</h1>
         <p class="lede">Voltra is a desktop app for single-line diagrams, floor plans and material lists.
-          It runs offline, your drawings stay on your own computer, and it imports the files you already
-          have — so you can start today.</p>
+          It runs offline, your drawings stay on your computer, and it imports the files you already have.</p>
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg" id="hero-download" href="#download">
             <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -68,63 +63,54 @@
           </a>
           <a class="btn btn-ghost btn-lg" href="#features">See what it does</a>
         </div>
-        <p class="hero-sub"><span><b>Free</b> to use</span><span><b>No account</b> to start</span><span><b>Offline</b> &amp; private</span></p>
+        <p class="hero-sub">
+          <span><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Free to use</span>
+          <span><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>No account to start</span>
+          <span><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Offline &amp; private</span>
+        </p>
       </div>
-      <div class="hero-art shot3d reveal">
-        <div class="shot-frame" id="tilt">
-          <span class="shot-glow" aria-hidden="true"></span>
-          <picture><img src="./assets/shot-diagram.webp" width="2200" height="1375" alt="The Voltra app showing an electrical single-line diagram with breakers, a differential, a busbar and two circuits."></picture>
+      <div class="hero-art">
+        <div class="frame"><div class="bar"><i></i><i></i><i></i></div>
+          <img src="./assets/shot-diagram.webp" width="2200" height="1375" alt="The Voltra app showing an electrical single-line diagram with breakers, a differential, a busbar and two circuits.">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TRUST -->
   <section class="trust">
     <div class="wrap trust-row">
-      <div class="trust-item"><b class="sm">Single-line diagrams</b><span>Draw the installation from supply to circuits</span></div>
-      <div class="trust-item"><b class="sm">Floor plans</b><span>Place symbols, import DXF/PDF underlays</span></div>
-      <div class="trust-item"><b class="sm">Material lists</b><span>Priced automatically, export to Excel</span></div>
-      <div class="trust-item"><b class="sm">3 platforms</b><span>Windows · macOS · Linux</span></div>
+      <div class="trust-item"><b>Single-line diagrams</b><span>From supply to circuits</span></div>
+      <div class="trust-item"><b>Floor plans</b><span>DXF/PDF underlays</span></div>
+      <div class="trust-item"><b>Material lists</b><span>Priced, export to Excel</span></div>
+      <div class="trust-item"><b>3 platforms</b><span>Windows · macOS · Linux</span></div>
     </div>
   </section>
 
-  <!-- SHOWCASE -->
   <section class="section" id="features">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="kicker">Built for electricians</p>
-        <h2>Everything for the drawing you hand to the inspector</h2>
-      </div>
+      <div class="sec-head"><p class="kicker">Built for electricians</p><h2>Everything for the drawing you hand to the inspector</h2></div>
       <div class="showcase">
         <div class="row">
-          <div class="row-media reveal">
-            <div class="media-frame"><img src="./assets/shot-diagram.webp" width="2200" height="1375" alt="Voltra single-line diagram editor with a symbol palette and a drawn installation."></div>
-          </div>
-          <div class="row-copy reveal">
+          <div class="row-media"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="./assets/shot-diagram.webp" width="2200" height="1375" alt="Voltra single-line diagram editor with a symbol palette and a drawn installation."></div></div>
+          <div class="row-copy">
             <h3>Draw single-line diagrams fast</h3>
-            <p>Build the installation from the supply chain down — breakers, differentials, cables and
-              circuits — with a symbol library made for the job.</p>
+            <p>Build the installation from the supply chain down — breakers, differentials, cables and circuits — with a symbol library made for the job.</p>
             <ul class="row-list">
-              <li>Built-in checks catch common mistakes before the inspection</li>
-              <li>Cable types, ratings and circuit labels on every branch</li>
-              <li>Undo, copy, favourites — it stays out of your way</li>
+              <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Built-in checks catch mistakes before the inspection</li>
+              <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Cable types, ratings and circuit labels on every branch</li>
+              <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Undo, copy, favourites — it stays out of your way</li>
             </ul>
           </div>
         </div>
-
         <div class="row flip">
-          <div class="row-media reveal">
-            <div class="media-frame"><img src="./assets/shot-print.webp" width="2200" height="1375" alt="Voltra print and export view showing the single-line diagram laid out on an A4 sheet with a title block."></div>
-          </div>
-          <div class="row-copy reveal">
+          <div class="row-media"><div class="frame"><div class="bar"><i></i><i></i><i></i></div><img src="./assets/shot-print.webp" width="2200" height="1375" alt="Voltra print and export view showing the single-line diagram on an A4 sheet with a title block."></div></div>
+          <div class="row-copy">
             <h3>Hand over a clean, inspection-ready PDF</h3>
-            <p>Lay the diagram, floor plan and circuit list onto A4–A0 with a proper title block, then
-              export to PDF or SVG — the document your client and the inspector expect.</p>
+            <p>Lay the diagram, floor plan and circuit list onto A4–A0 with a proper title block, then export to PDF or SVG — the document your client and the inspector expect.</p>
             <ul class="row-list">
-              <li>Paper sizes A4 through A0, multi-page</li>
-              <li>Title block with installation details and signatures</li>
-              <li>Pro removes the watermark for the final copy</li>
+              <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Paper sizes A4 through A0, multi-page</li>
+              <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Title block with installation details and signatures</li>
+              <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Pro removes the watermark for the final copy</li>
             </ul>
           </div>
         </div>
@@ -132,105 +118,78 @@
     </div>
   </section>
 
-  <!-- FEATURE CARDS -->
-  <section class="section" id="how" class="pt0">
+  <section class="section alt" id="how">
     <div class="wrap">
-      <div class="sec-head center">
-        <p class="kicker">One app, the whole job</p>
-        <h2>From first symbol to final document</h2>
-      </div>
+      <div class="sec-head center"><p class="kicker">One app, the whole job</p><h2>From first symbol to final document</h2></div>
       <div class="grid3">
-        <div class="card reveal"><svg class="gi" viewBox="0 0 48 48"><path d="M24 6v12M24 18H14v10M24 18h10v10M14 28v8M34 28v8M24 18v18"/><circle cx="14" cy="38" r="3"/><circle cx="34" cy="38" r="3"/><rect x="20" y="36" width="8" height="6" rx="1"/></svg><h4>Single-line diagrams</h4><p>The supply chain, breakers, RCDs and circuits — drawn the way inspectors read them.</p></div>
-        <div class="card reveal"><svg class="gi" viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="30" rx="2"/><path d="M7 24h14v15M21 24V9M28 9v12h13"/><circle cx="33" cy="30" r="3"/></svg><h4>Floor plans</h4><p>Place symbols on the plan and drop a DXF or PDF underlay behind them.</p></div>
-        <div class="card reveal"><svg class="gi" viewBox="0 0 48 48"><rect x="9" y="7" width="30" height="34" rx="2"/><path d="M15 16h18M15 24h18M15 32h12"/></svg><h4>Material lists</h4><p>Every symbol carries its article number and price, totalled automatically. Export to Excel.</p></div>
-        <div class="card reveal"><svg class="gi" viewBox="0 0 48 48"><path d="M24 6l15 6v9c0 9-6 16-15 21-9-5-15-12-15-21v-9z"/><path d="M18 24l4 4 9-9"/></svg><h4>Built-in checks</h4><p>Catch the mistakes that fail an inspection before you ever print.</p></div>
-        <div class="card reveal"><svg class="gi" viewBox="0 0 48 48"><rect x="6" y="12" width="36" height="24" rx="3"/><path d="M6 20h36M16 44h16M24 36v8"/></svg><h4>Offline &amp; cross-platform</h4><p>A real desktop app on Windows, macOS and Linux. Nothing is uploaded.</p></div>
-        <div class="card reveal"><svg class="gi" viewBox="0 0 48 48"><path d="M30 8H14a2 2 0 00-2 2v28a2 2 0 002 2h20a2 2 0 002-2V16z"/><path d="M30 8v8h6M19 26l4 4 8-8"/></svg><h4>Clean PDF &amp; export</h4><p>Export the diagram, plan and material list to PDF, SVG, Excel or CSV.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v6M12 9H7v5M12 9h5v5M7 14v4M17 14v4M12 9v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Single-line diagrams</h4><p>The supply chain, breakers, RCDs and circuits — drawn the way inspectors read them.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h7v8M10 12V4M14 4v6h7" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><h4>Floor plans</h4><p>Place symbols on the plan and drop a DXF or PDF underlay behind them.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="3" width="16" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Material lists</h4><p>Every symbol carries its article number and price, totalled automatically. Export to Excel.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Built-in checks</h4><p>Catch the mistakes that fail an inspection before you ever print.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Offline &amp; cross-platform</h4><p>A real desktop app on Windows, macOS and Linux. Nothing is uploaded.</p></div>
+        <div class="card"><div class="ic"><svg viewBox="0 0 24 24" fill="none"><path d="M15 3H7a2 2 0 00-2 2v14a2 2 0 002 2h10a2 2 0 002-2V7z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M15 3v4h4M9 14l2 2 4-4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h4>Clean PDF &amp; export</h4><p>Export the diagram, plan and material list to PDF, SVG, Excel or CSV.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- DOWNLOAD -->
-  <section class="section" id="download" class="pt0">
+  <section class="section" id="download">
     <div class="wrap">
-      <div class="sec-head center">
-        <p class="kicker">Version <span class="mono" id="ver">1.0.0</span> · free</p>
-        <h2>Download Voltra</h2>
-        <p>Pick your system — we've highlighted the one you appear to be on.</p>
-      </div>
+      <div class="sec-head center"><p class="kicker">Version <span class="mono" id="ver">1.0.0</span> · free</p><h2>Download Voltra</h2><p>Pick your system — we've highlighted the one you appear to be on.</p></div>
       <div class="dl-wrap" id="dl-list">
-        <a class="dl-row" data-os="windows" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-windows-setup.exe" rel="noopener">
-          <span class="dl-os">Windows</span><span class="dl-kind">Installer (.exe)</span><span class="dl-size">~90 MB</span><span class="dl-get">Download</span></a>
-        <a class="dl-row" data-os="windows" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-windows-portable.exe" rel="noopener">
-          <span class="dl-os">Windows</span><span class="dl-kind">Portable (no install)</span><span class="dl-size">~90 MB</span><span class="dl-get">Download</span></a>
-        <a class="dl-row" data-os="mac-arm" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-mac-apple-silicon.dmg" rel="noopener">
-          <span class="dl-os">macOS</span><span class="dl-kind">Apple Silicon (M1–M4)</span><span class="dl-size">~105 MB</span><span class="dl-get">Download</span></a>
-        <a class="dl-row" data-os="mac-intel" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-mac-intel.dmg" rel="noopener">
-          <span class="dl-os">macOS</span><span class="dl-kind">Intel</span><span class="dl-size">~109 MB</span><span class="dl-get">Download</span></a>
-        <a class="dl-row" data-os="linux" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-linux.AppImage" rel="noopener">
-          <span class="dl-os">Linux</span><span class="dl-kind">AppImage (any distro)</span><span class="dl-size">~112 MB</span><span class="dl-get">Download</span></a>
-        <a class="dl-row" data-os="linux" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-linux.deb" rel="noopener">
-          <span class="dl-os">Linux</span><span class="dl-kind">Debian / Ubuntu (.deb)</span><span class="dl-size">~77 MB</span><span class="dl-get">Download</span></a>
+        <a class="dl-row" data-os="windows" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-windows-setup.exe" rel="noopener"><span class="dl-os">Windows</span><span class="dl-kind">Installer (.exe)</span><span class="dl-size">~90 MB</span><span class="dl-get">Download</span></a>
+        <a class="dl-row" data-os="windows" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-windows-portable.exe" rel="noopener"><span class="dl-os">Windows</span><span class="dl-kind">Portable (no install)</span><span class="dl-size">~90 MB</span><span class="dl-get">Download</span></a>
+        <a class="dl-row" data-os="mac-arm" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-mac-apple-silicon.dmg" rel="noopener"><span class="dl-os">macOS</span><span class="dl-kind">Apple Silicon (M1–M4)</span><span class="dl-size">~105 MB</span><span class="dl-get">Download</span></a>
+        <a class="dl-row" data-os="mac-intel" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-mac-intel.dmg" rel="noopener"><span class="dl-os">macOS</span><span class="dl-kind">Intel</span><span class="dl-size">~109 MB</span><span class="dl-get">Download</span></a>
+        <a class="dl-row" data-os="linux" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-linux.AppImage" rel="noopener"><span class="dl-os">Linux</span><span class="dl-kind">AppImage (any distro)</span><span class="dl-size">~112 MB</span><span class="dl-get">Download</span></a>
+        <a class="dl-row" data-os="linux" href="https://github.com/mqasimhere/voltra-downloads/releases/latest/download/voltra-linux.deb" rel="noopener"><span class="dl-os">Linux</span><span class="dl-kind">Debian / Ubuntu (.deb)</span><span class="dl-size">~77 MB</span><span class="dl-get">Download</span></a>
       </div>
-      <p class="muted dl-note">
-        Not code-signed yet, so your system may show a one-time caution on first launch (Windows: <b>More
-        info → Run anyway</b>; macOS: <b>right-click → Open</b>). Verify any download against
-        <a id="sums-link" href="#" rel="noopener">SHA-256 checksums</a>.</p>
+      <p class="muted dl-note">Not code-signed yet, so your system may show a one-time caution on first launch (Windows: <b>More info → Run anyway</b>; macOS: <b>right-click → Open</b>). Verify any download against <a id="sums-link" href="#" rel="noopener">SHA-256 checksums</a>.</p>
     </div>
   </section>
 
-  <!-- MIGRATION (quiet) -->
-  <section class="migrate section">
+  <section class="section alt">
     <div class="wrap migrate-box">
-      <div class="reveal">
+      <div>
         <p class="kicker">Switching over?</p>
         <h2 class="mig-h2">Bring the drawings you already have</h2>
-        <p class="mig-p">Voltra opens the files you've drawn in
-          other Belgian single-line software, including Trikker's <code>.trik</code> files — the diagram, the
-          supply chain, the floor plan and the customer details — and turns them into an editable Voltra
-          document. Open a file, check it, save. Your originals are never changed.</p>
-        <p class="muted mig-dis">Voltra is an independent product and is not
-          affiliated with Trikker.</p>
+        <p class="mig-p">Voltra opens the files you've drawn in other Belgian single-line software, including Trikker's <code>.trik</code> files — the diagram, the supply chain, the floor plan and the customer details — and turns them into an editable Voltra document. Open a file, check it, save. Your originals are never changed.</p>
+        <p class="muted mig-dis">Voltra is an independent product and is not affiliated with Trikker.</p>
       </div>
-      <div class="reveal center-self">
+      <div class="center-self">
         <div class="swap">
           <div class="chip"><span class="mono">plan.trik</span><small>your file</small></div>
-          <span class="arrow" aria-hidden="true">→</span>
+          <span class="arrow"><svg viewBox="0 0 28 20" fill="none"><path d="M3 10h20M18 4l6 6-6 6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
           <div class="chip to"><span class="mono">plan.voltra</span><small>in Voltra</small></div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PRICING -->
   <section class="section" id="pricing">
     <div class="wrap">
-      <div class="sec-head center">
-        <p class="kicker">Simple pricing</p>
-        <h2>Free to use. Upgrade when you need the clean deliverable.</h2>
-      </div>
+      <div class="sec-head center"><p class="kicker">Simple pricing</p><h2>Free to use. Upgrade when you need the clean deliverable.</h2></div>
       <div class="plans">
-        <div class="plan reveal">
+        <div class="plan">
           <h3>Free</h3>
-          <div class="price"><span class="amt mono">€0</span></div>
+          <div class="price"><span class="amt">€0</span></div>
           <ul>
-            <li>Up to 5 circuits</li>
-            <li>1 floor-plan page</li>
-            <li>Imports your existing files</li>
-            <li>PDF &amp; print <span class="muted">(with watermark)</span></li>
-            <li>Checks, circuit table, backups</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Up to 5 circuits</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>1 floor-plan page</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Imports your existing files</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF &amp; print <span class="muted">(watermark)</span></li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Checks, circuit table, backups</li>
           </ul>
           <a class="btn btn-ghost" href="#download">Download free</a>
         </div>
-        <div class="plan pro reveal">
-          <div class="flag"><span class="dot"></span>Pro</div>
-          <div class="price"><span class="amt mono">€19</span><span class="per">/month</span></div>
+        <div class="plan pro">
+          <span class="flag">Pro</span>
+          <div class="price"><span class="amt">€19</span><span class="per">/month</span></div>
           <p class="price-alt mono">or €190 / year · excl. VAT · cancel anytime</p>
           <ul>
-            <li>Everything in Free, plus:</li>
-            <li>Unlimited circuits &amp; plan pages</li>
-            <li>PDF &amp; print <b>without watermark</b></li>
-            <li>Export to Excel &amp; CSV</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Free, plus:</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited circuits &amp; plan pages</li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF &amp; print <b>without watermark</b></li>
+            <li><svg viewBox="0 0 20 20" fill="none"><path d="M5 10.5l3.2 3.2L15 7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Export to Excel &amp; CSV</li>
           </ul>
           <a class="btn btn-primary" href="#download">Start free, upgrade in-app</a>
         </div>
@@ -238,58 +197,37 @@
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section class="section" id="faq">
+  <section class="section alt" id="faq">
     <div class="wrap">
       <div class="sec-head center"><p class="kicker">Questions</p><h2>Good to know</h2></div>
       <div class="faq">
-        <details><summary>Is Voltra really free?</summary><p>Yes. The free version is a full working app:
-          draw diagrams and plans, run the checks, and print or export to PDF. It's limited to 5 circuits and
-          one floor-plan page and adds a watermark to exports. Pro removes those limits.</p></details>
-        <details><summary>Which systems does it run on?</summary><p>Windows 10/11, macOS (Apple Silicon and
-          Intel) and Linux. It's a standard desktop app — if your current software runs on your PC, Voltra
-          will too.</p></details>
-        <details><summary>Where is my data stored?</summary><p>On your own computer. Voltra is a desktop app;
-          your drawings and customer details are saved as files on your machine and are never uploaded. Only a
-          subscription, if you buy one, involves our server (just your e-mail and plan).</p></details>
-        <details><summary>Can I open files from other software?</summary><p>Yes — Voltra imports single-line
-          files from other Belgian tools, including Trikker <code>.trik</code> files, so you don't have to
-          redraw your existing work. Voltra is independent and not affiliated with Trikker.</p></details>
-        <details><summary>Why does my computer warn me on first launch?</summary><p>Because the app isn't
-          code-signed yet. It's safe to run — see the note under Download — and you can verify the file against
-          its published SHA-256 checksum.</p></details>
+        <details><summary>Is Voltra really free?</summary><p>Yes. The free version is a full working app: draw diagrams and plans, run the checks, and print or export to PDF. It's limited to 5 circuits and one floor-plan page and adds a watermark to exports. Pro removes those limits.</p></details>
+        <details><summary>Which systems does it run on?</summary><p>Windows 10/11, macOS (Apple Silicon and Intel) and Linux. It's a standard desktop app — if your current software runs on your PC, Voltra will too.</p></details>
+        <details><summary>Where is my data stored?</summary><p>On your own computer. Voltra is a desktop app; your drawings and customer details are saved as files on your machine and are never uploaded. Only a subscription, if you buy one, involves our server (just your e-mail and plan).</p></details>
+        <details><summary>Can I open files from other software?</summary><p>Yes — Voltra imports single-line files from other Belgian tools, including Trikker <code>.trik</code> files, so you don't have to redraw your existing work. Voltra is independent and not affiliated with Trikker.</p></details>
+        <details><summary>Why does my computer warn me on first launch?</summary><p>Because the app isn't code-signed yet. It's safe to run — see the note under Download — and you can verify the file against its published SHA-256 checksum.</p></details>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="section cta">
-    <div class="wrap">
-      <div class="cta-box reveal">
-        <h2>Draw your next plan in Voltra</h2>
-        <p>Download it free, open one of your existing files, and see how it feels.</p>
-        <a class="btn btn-primary btn-lg" href="#download">Download Voltra</a>
-      </div>
-    </div>
+  <section class="section">
+    <div class="wrap"><div class="cta-box">
+      <h2>Draw your next plan in Voltra</h2>
+      <p>Download it free, open one of your existing files, and see how it feels.</p>
+      <a class="btn btn-primary btn-lg" href="#download">Download Voltra</a>
+    </div></div>
   </section>
 </main>
 
 <footer class="foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div class="foot-brand">
-        <img src="./assets/mark-96.png" alt="" width="24" height="24">
-        <span class="fb-name">Voltra</span>
-        <p>Single-line diagrams, floor plans and material lists for electrical installations.</p>
-      </div>
+      <div class="foot-brand"><img src="./assets/mark-96.png" alt="" width="22" height="22"><span class="fb-name">Voltra</span><p>Single-line diagrams, floor plans and material lists for electrical installations.</p></div>
       <nav class="foot-col" aria-label="Product"><h5>Product</h5><a href="#features">Features</a><a href="#download">Download</a><a href="#pricing">Pricing</a></nav>
       <nav class="foot-col" aria-label="Legal"><h5>Legal</h5><a href="./privacy.html">Privacy</a><a href="./terms.html">Terms</a><a href="./refund.html">Refund</a></nav>
       <nav class="foot-col" aria-label="More"><h5>More</h5><a id="gh-link" href="#" rel="noopener">Downloads on GitHub</a><a href="mailto:[CONTACT-EMAIL]">Contact</a><a href="./fr/">Français</a></nav>
     </div>
-    <div class="foot-legal">
-      <span>© <span id="year">2026</span> [LEGAL NAME]. Voltra is independent and not affiliated with Trikker.</span>
-      <span>Made for electricians.</span>
-    </div>
+    <div class="foot-legal"><span>© <span id="year">2026</span> [LEGAL NAME]. Voltra is independent and not affiliated with Trikker.</span><span>Made for electricians.</span></div>
   </div>
 </footer>
 
